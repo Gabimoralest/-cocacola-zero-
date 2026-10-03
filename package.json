@@ -1,0 +1,12 @@
+{
+  "name": "cocacola-zero",
+  "version": "1.0.0",
+  "description": "Landing page Coca-Cola Zero Sugar",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
