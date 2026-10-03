@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Coca-Cola Zero Sugar · Momentos sin límites. Experiencia conceptual creada para fines académicos.">
+  <title>Coca-Cola Zero Sugar · Momentos sin límites</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       SKIP LINK (accesibilidad)
+       ============================================================ -->
+  <a class="skip-link" href="#inicio">Saltar al contenido</a>
+
+  <!-- ============================================================
+       HEADER ÚNICO (sticky / fixed) — no participa del parallax
+       ============================================================ -->
+  <header class="header" id="header">
+    <a class="logo" href="#inicio" aria-label="Coca-Cola Zero Sugar, ir al inicio">
+      <img class="logo__img" src="Cocacola/logo.png" alt="Coca-Cola Zero Sugar">
+    </a>
+
+    <nav class="nav" aria-label="Navegación principal">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="#producto">Producto</a></li>
+        <li><a class="nav__link" href="#ingredientes">Ingredientes</a></li>
+        <li><a class="nav__link" href="#informacion-nutricional">Información nutricional</a></li>
+        <li><a class="nav__link" href="#momentos">Momentos</a></li>
+        <li><a class="nav__link" href="#experiencia">Experiencia</a></li>
+        <li><a class="nav__link" href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <!-- Botón Sonido: controla EXCLUSIVAMENTE Cocacola/audio1.mp4 -->
+      <button class="sound-btn" id="soundBtn" type="button" aria-pressed="false" aria-label="Reproducir sonido">
+        <svg class="sound-btn__icon" viewBox="0 0 24 24" width="20" height="20" fill="none"
+             stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 9v6h3l4 4V5L7 9H4z" fill="currentColor" stroke="none"/>
+          <path class="sound-btn__wave" d="M15.5 8.7a4.6 4.6 0 0 1 0 6.6"/>
+          <path class="sound-btn__wave" d="M18.2 6a8.5 8.5 0 0 1 0 12"/>
+        </svg>
+        <span class="sound-btn__label">Sonido</span>
+      </button>
+
+      <!-- Botón menú móvil -->
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Navegación móvil -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Navegación móvil" hidden>
+    <ul>
+      <li><a href="#producto">Producto</a></li>
+      <li><a href="#ingredientes">Ingredientes</a></li>
+      <li><a href="#informacion-nutricional">Información nutricional</a></li>
+      <li><a href="#momentos">Momentos</a></li>
+      <li><a href="#experiencia">Experiencia</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         HERO / INICIO — video Cocacola/lata1.mp4 como ÚNICA capa de fondo
+         (no hay imagen ni segunda instancia: solo este <video>)
+         ============================================================ -->
+    <section class="hero" id="inicio">
+      <video class="hero__video" data-hero autoplay muted loop playsinline preload="auto"
+             aria-hidden="true" tabindex="-1">
+        <source src="Cocacola/lata1.mp4" type="video/mp4">
+      </video>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__vignette" aria-hidden="true"></div>
+      <div class="hero__particles" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow">EL MISMO GRAN SABOR · SIN AZÚCAR</p>
+        <h1 class="hero__title">
+          <span class="hero__title-white">MOMENTOS</span>
+          <span class="hero__title-red">SIN LÍMITES</span>
+        </h1>
+        <p class="hero__sub">
+          No importa la edad, el lugar o el plan.<br>
+          Hay momentos que simplemente merecen disfrutarse.
+        </p>
+        <a class="btn btn--primary hero__cta" href="#momentos">
+          Descubre el momento <span class="btn__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PRODUCTO — video de Coca-Cola sirviéndose
+         ============================================================ -->
+    <section class="product" id="producto">
+      <!-- Único contenedor: video (base) + overlay de contenido encima -->
+      <div class="product__stage">
+        <video class="product__video" id="productMain" autoplay data-autoplay data-restart="true"
+               src="Cocacola/lata2.mp4" poster="Cocacola/4.png" disablepictureinpicture
+               muted playsinline loop preload="auto" aria-hidden="true" tabindex="-1"></video>
+
+        <!-- Oscurecido sutil para legibilidad del texto -->
+        <div class="product__overlay" aria-hidden="true"></div>
+
+        <!-- Contenido anclado DENTRO del contenedor del video -->
+        <div class="product__content">
+          <div class="product__copy reveal" data-delay="1">
+            <h2 class="display">
+              El sabor<br>que conoces.<br>
+              <span class="accent">Ahora,<br>sin azúcar.</span>
+            </h2>
+            <p class="product__text">
+              Coca-Cola Zero mantiene la experiencia que te encanta, sin azúcar.
+            </p>
+            <ul class="feature-list">
+              <li class="feature">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor"
+                     stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 19c0-8 6-14 14-14 0 8-6 14-14 14z"/>
+                  <path d="M5 19c3-3 6.5-5 11-6"/>
+                </svg>
+                <span>CERO<br>AZÚCAR</span>
+              </li>
+              <li class="feature">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor"
+                     stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 3c3 4 6 6.6 6 10a6 6 0 1 1-12 0c0-3.4 3-6 6-10z"/>
+                </svg>
+                <span>GRAN<br>SABOR</span>
+              </li>
+              <li class="feature">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor"
+                     stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 2 21 7v10l-9 5-9-5V7z"/>
+                  <path d="M3 7l9 5 9-5M12 12v10"/>
+                </svg>
+                <span>BIEN<br>FRÍA</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         INGREDIENTES — contenido (izquierda) · lata grande (derecha)
+         ============================================================ -->
+    <section class="ingredients" id="ingredientes">
+      <div class="ingredients__inner">
+
+        <!-- Contenido textual: título, subtítulo, ingredientes y botón -->
+        <div class="ingredients__copy reveal">
+          <p class="ingredients__label">Ingredientes</p>
+
+          <h2 class="ingredients__title display">
+            Lo que hay<br>en cada <span class="accent">lata</span>
+          </h2>
+
+          <p class="ingredients__text">
+            Una combinación única que mantiene el mismo gran sabor, sin azúcar.
+          </p>
+
+          <ul class="ingredients__names" aria-label="Ingredientes">
+            <li><span aria-hidden="true">💧</span> Agua carbonatada</li>
+            <li><span aria-hidden="true">🟤</span> Color caramelo</li>
+            <li><span aria-hidden="true">🫧</span> Acidulantes</li>
+            <li><span aria-hidden="true">🌿</span> Edulcorantes</li>
+            <li><span aria-hidden="true">☕</span> Cafeína</li>
+            <li><span aria-hidden="true">💧</span> Aromas</li>
+          </ul>
+
+          <a class="btn btn--primary ingredients__cta" href="#informacion-nutricional">
+            Ver información nutricional <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <!-- Lata protagonista: imagen existente, sin recortar ni deformar -->
+        <figure class="ingredients__media reveal" data-delay="1">
+          <img src="Cocacola/ingredientes.png"
+               alt="Lata de Coca-Cola Zero Sugar con gotas de condensación" loading="lazy">
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         INFORMACIÓN NUTRICIONAL — destino del botón de Ingredientes
+         ============================================================ -->
+    <section class="nutrition" id="informacion-nutricional">
+      <div class="nutrition__inner">
+
+        <!-- Lata protagonista (imagen existente, sin modificar) -->
+        <figure class="nutrition__media reveal">
+          <img src="Cocacola/nutricion.png"
+               alt="Lata de Coca-Cola Zero Sugar con splash de hielo y refresco" loading="lazy">
+        </figure>
+
+        <!-- Panel único con TODA la información -->
+        <div class="nutrition__panel reveal" data-delay="1">
+          <p class="nutrition__eyebrow">Información nutricional</p>
+
+          <h2 class="nutrition__title display">
+            Lo esencial,<br><span class="accent">de un solo vistazo.</span>
+          </h2>
+
+          <p class="nutrition__sub">
+            Información nutricional de Coca-Cola Zero.
+          </p>
+
+          <table class="nutrition__table">
+            <caption class="visually-hidden">
+              Información nutricional de Coca-Cola Zero por porción de 250 ml
+            </caption>
+            <tbody>
+              <tr class="nutrition__row--highlight">
+                <th scope="row">Tamaño de la porción</th>
+                <td>250 ml</td>
+              </tr>
+              <tr>
+                <th scope="row">Energía</th>
+                <td>0 kcal</td>
+              </tr>
+              <tr>
+                <th scope="row">Grasas totales</th>
+                <td>0 g</td>
+              </tr>
+              <tr>
+                <th scope="row">Grasas saturadas</th>
+                <td>0 g</td>
+              </tr>
+              <tr>
+                <th scope="row">Carbohidratos totales</th>
+                <td>0 g</td>
+              </tr>
+              <tr>
+                <th scope="row">Azúcares</th>
+                <td>0 g</td>
+              </tr>
+              <tr>
+                <th scope="row">Proteínas</th>
+                <td>0 g</td>
+              </tr>
+              <tr>
+                <th scope="row">Sodio</th>
+                <td>40 mg</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="nutrition__note">
+            <span aria-hidden="true">ⓘ</span>
+            Los valores pueden variar según la presentación del producto.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         INTRODUCCIÓN / MOMENTOS
+         ============================================================ -->
+    <section class="intro" id="momentos">
+      <div class="intro__glow" aria-hidden="true" data-parallax="0.05"></div>
+      <div class="intro__grid">
+        <h2 class="display intro__title reveal">
+          ¿Qué hace<br>especial<br><span class="accent">un momento?</span>
+        </h2>
+        <div class="intro__text reveal" data-delay="1">
+          <p class="intro__lead">No existe una sola respuesta.</p>
+          <p class="intro__body">
+            Puede ser una comida familiar, una conversación que se alarga,
+            una celebración inesperada o esos minutos en los que
+            simplemente desconectas.
+          </p>
+          <blockquote class="intro__quote">
+            Coca-Cola Zero acompaña el momento.
+            <strong>Tú decides cómo vivirlo.</strong>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXPERIENCIA — video central grande + selector de momentos
+         ============================================================ -->
+    <section class="experience" id="experiencia">
+      <div class="experience__grid">
+
+        <!-- Texto (izquierda) -->
+        <div class="experience__copy reveal">
+          <h2 class="display">
+            Tu momento.<br>
+            <span class="accent">Tu elección.</span>
+          </h2>
+          <p class="experience__sub">El mismo gran sabor,<br>en cada uno de tus momentos.</p>
+        </div>
+
+        <!-- Video central grande -->
+        <figure class="experience__player reveal" data-delay="1" id="experiencePlayer">
+          <video class="experience__video" id="sceneVideo" controls playsinline
+                 preload="metadata" poster="Cocacola/amigos.png"
+                 aria-label="Video de la experiencia seleccionada">
+            <source src="Cocacola/partido.mp4" type="video/mp4">
+            <track kind="captions" src="Cocacola/scene-captions.vtt" srclang="es"
+                   label="Español" default>
+          </video>
+          <figcaption class="experience__label">
+            <span class="scene-dot" aria-hidden="true"></span>
+            <span id="sceneLabel" aria-live="polite">CON AMIGOS</span>
+          </figcaption>
+        </figure>
+
+        <!-- Selector vertical (derecha) -->
+        <div class="experience__picker" role="tablist" aria-label="Elige un momento" aria-orientation="vertical">
+          <button class="picker-item is-active" type="button" role="tab"
+                  data-scene="amigos" aria-selected="true">
+            <img src="Cocacola/amigos.png" alt="Amigos viendo un partido de fútbol" loading="lazy">
+            <span>Con amigos</span>
+          </button>
+          <button class="picker-item" type="button" role="tab"
+                  data-scene="familia" aria-selected="false" tabindex="-1">
+            <img src="Cocacola/familia.png" alt="Familia reunida durante una cena" loading="lazy">
+            <span>En familia</span>
+          </button>
+          <button class="picker-item" type="button" role="tab"
+                  data-scene="tipara" aria-selected="false" tabindex="-1">
+            <img src="Cocacola/sola.png" alt="Mujer disfrutando frente al mar al atardecer" loading="lazy">
+            <span>Para ti</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Franja inferior discreta -->
+      <ul class="experience__concepts reveal" aria-label="Conceptos de la experiencia">
+        <li><span class="concept-icon" aria-hidden="true">⚡</span><b>Energía</b><small>Para cada plan.</small></li>
+        <li><span class="concept-icon" aria-hidden="true">♡</span><b>Conexión</b><small>Con lo que importa.</small></li>
+        <li><span class="concept-icon" aria-hidden="true">☼</span><b>Calma</b><small>En tu propio tiempo.</small></li>
+      </ul>
+    </section>
+
+    <!-- ============================================================
+         CONTACTO / CIERRE
+         ============================================================ -->
+    <section class="contact" id="contacto">
+      <div class="contact__glow" aria-hidden="true" data-parallax="0.05"></div>
+      <p class="contact__eyebrow reveal">PARA CADA GENERACIÓN · PARA CADA MOMENTO</p>
+      <h2 class="display display--xl reveal" data-delay="1">
+        Disfruta<br><span class="accent">a tu manera.</span>
+      </h2>
+      <p class="contact__sub reveal" data-delay="2">
+        Descubre Coca-Cola Zero Sugar y encuentra tu forma de disfrutar cada momento.
+      </p>
+      <a class="btn btn--light reveal" data-delay="3"
+         href="https://www.coca-cola.com/co/es" target="_blank" rel="noopener noreferrer">
+        Visitar Coca-Cola <span class="btn__arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <span class="footer__logo">Coca-Cola <strong>zero</strong></span>
+    <p class="footer__note">
+      Experiencia conceptual creada para fines académicos. No es un sitio oficial de The Coca-Cola Company.
+    </p>
+    <p class="footer__copy">© 2026 · Momentos sin límites</p>
+  </footer>
+
+  <!-- Audio EXCLUSIVO del botón Sonido (solo se usa su pista de audio) -->
+  <audio id="soundAudio" src="Cocacola/audio1.mp4" preload="none"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
