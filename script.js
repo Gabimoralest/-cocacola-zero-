@@ -220,22 +220,22 @@
   const SCENES = {
     amigos: {
       label: "CON AMIGOS",
-      src: "Cocacola/partido.mp4",
-      poster: "Cocacola/amigos.png",
+      src: "https://gabimoralest.github.io/-cocacola-zero-/Cocacola/partido.mp4",
+      poster: "https://gabimoralest.github.io/-cocacola-zero-/Cocacola/amigos.png",
       transcript:
         "Amigos: ambiente de fútbol, risas, conversación, apertura de lata, efervescencia y hielo.",
     },
     familia: {
       label: "EN FAMILIA",
-      src: "Cocacola/cumpleaños.mp4",
-      poster: "Cocacola/familia.png",
+      src: "https://gabimoralest.github.io/-cocacola-zero-/Cocacola/cumpleaños.mp4",
+      poster: "https://gabimoralest.github.io/-cocacola-zero-/Cocacola/familia.png",
       transcript:
         "Familia: conversación, cena, cubiertos, risas, apertura de lata, efervescencia y hielo.",
     },
     tipara: {
       label: "PARA TI",
-      src: "Cocacola/mar.mp4",
-      poster: "Cocacola/sola.png",
+      src: "https://gabimoralest.github.io/-cocacola-zero-/Cocacola/mar.mp4",
+      poster: "https://gabimoralest.github.io/-cocacola-zero-/Cocacola/sola.png",
       transcript:
         "Para ti: olas, brisa, apertura de lata, efervescencia y ambiente relajante.",
     },
