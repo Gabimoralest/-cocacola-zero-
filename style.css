@@ -987,13 +987,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .45s var(--ease), transform .45s var(--ease);
+  transform: translateY(16px);
+  transition: opacity .3s var(--ease), transform .3s var(--ease);
   will-change: opacity, transform;
 }
-.reveal[data-delay="1"] { transition-delay: .06s; }
-.reveal[data-delay="2"] { transition-delay: .12s; }
-.reveal[data-delay="3"] { transition-delay: .18s; }
+.reveal[data-delay="1"] { transition-delay: 0s; }
+.reveal[data-delay="2"] { transition-delay: 0s; }
+.reveal[data-delay="3"] { transition-delay: 0s; }
 .reveal.is-visible { opacity: 1; transform: none; }
 
 /* ==========================================================================
